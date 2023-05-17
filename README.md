@@ -1,13 +1,13 @@
-# Pokémon-Info with SvelteKit
+# PokéSvelte with SvelteKit
 
-This project is a simple Pokémon search application that uses PokeAPI to retrieve and display information about Pokémon. It was developed using SvelteKit.
+PokéSvelte is a simple Pokémon search application that uses PokeAPI to retrieve and display information about Pokémon. It was developed with Svelte.
 
 ![Pokémon-Info Screenshot](./screenshot.png)
 
-## 📚 Funktionen
+## 📚 Functions
 
 - Search for Pokémon by name
-- Display of the Pokémon and all info
+- Display information about the Pokémon
 
 
 ## 🌟 Requirements
@@ -19,19 +19,19 @@ This project is a simple Pokémon search application that uses PokeAPI to retrie
 Clone the repository:
 
    ```bash
-   git clone https://github.com/CallMeLeon167/pokeinfo.git
-   cd pokeinfo
+   git clone https://github.com/CallMeLeon167/PokeSvelte.git
+   cd PokeSvelte
    npm install
    npm run dev
    ```
 
-## 👷 Todo
+## 👷 To-Do
 
-- [ ] Error handling for invalid Pokémon names
-- [ ] Display of additional information about the Pokémon
-- [ ] Adding CSS styling and animations
+- [ ] Handle errors for invalid Pokémon names
+- [ ] Display additional information about the Pokémon
+- [ ] Add CSS styling and animations
 
-## 🔍 Resources
+## 🔍 Sources
 - [PokeApi](https://pokeapi.co/)
 - [Svelte](https://svelte.dev/)
 - [SvelteKit](https://kit.svelte.dev/)
