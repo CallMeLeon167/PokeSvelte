@@ -5,10 +5,13 @@ export const actions = {
         let name = data.get('pokemonName').toLowerCase();
 
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-        const pokemonData = await response.json();
 
-        pokemonData.name = pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.substring(1);
-
-        return pokemonData;
+        if (response.ok) {
+            const pokemonData = await response.json();
+            pokemonData.name = pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.substring(1);
+            return pokemonData;
+        } else {
+            return false;
+        }
     }
 };

@@ -23,7 +23,7 @@
   {#if pokemonData}
   <div id="pokemon-content">
     <h2>{pokemonData.name}</h2>
-    <img src="{pokemonData.sprites.front_default}" alt="{pokemonData.name}" />
+    <img src={pokemonData['sprites']['other']['official-artwork']['front_default']} alt="{pokemonData.name}" />
   </div>
   {/if}
 </main>
