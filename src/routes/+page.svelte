@@ -1,19 +1,21 @@
 <script>
-    let pokemonName = '';
-    let pokemonData = null;
-  
-    async function searchPokemon() {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-      const data = await response.json();
-      pokemonData = data;
-      console.log(pokemonData)
-    }
-  </script>
+  import { enhance } from '$app/forms';
+  import logo from '$lib/img/PokeSvelte.png';
+
+  let pokemonData;
+
+</script>
   
   <main>
-    <h1>Pokémon-Suche</h1>
-    <input type="text" bind:value="{pokemonName}" placeholder="Gib den Pokémon-Namen ein" />
-    <button on:click="{searchPokemon}">Suchen</button>
+    <img src={logo} alt="PokéSvelte Logo">
+    <form method="post" use:enhance={() => {
+      return async ({result}) => {
+        pokemonData = result.data;
+      }
+    }}>
+      <input type="text" name="pokemonName" placeholder="Which Pokémon are you looking for?" />
+      <button>Search</button>
+    </form>
   
     {#if pokemonData}
       <h2>{pokemonData.name}</h2>
@@ -22,6 +24,7 @@
   </main>
   
   <style>
+
     main {
       text-align: center;
       padding: 1rem;
