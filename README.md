@@ -1,38 +1,37 @@
-# create-svelte
+# Pokémon-Info with SvelteKit
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This project is a simple Pokémon search application that uses PokeAPI to retrieve and display information about Pokémon. It was developed using SvelteKit.
 
-## Creating a project
+![Pokémon-Info Screenshot](./screenshot.png)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 📚 Funktionen
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- Search for Pokémon by name
+- Display of the Pokémon and all info
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
 
-## Developing
+## 🌟 Requirements
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- Node.js (Version 14 or higher)
 
-```bash
-npm run dev
+## ✅ Installation
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+Clone the repository:
 
-## Building
+   ```bash
+   git clone https://github.com/CallMeLeon167/pokeinfo.git
+   cd pokeinfo
+   npm install
+   npm run dev
+   ```
 
-To create a production version of your app:
+## 👷 Todo
 
-```bash
-npm run build
-```
+- [ ] Error handling for invalid Pokémon names
+- [ ] Display of additional information about the Pokémon
+- [ ] Adding CSS styling and animations
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## 🔍 Resources
+- [PokeApi](https://pokeapi.co/)
+- [Svelte](https://svelte.dev/)
+- [SvelteKit](https://kit.svelte.dev/)
