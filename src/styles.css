@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 16px;
+    --background: #3c3c3e;
+    --text: #ffffff;
+    --primary: #4285f4;
+    --secondary: #fbbc04;
+}
+
+body {
+    height: 100dvh;
+    color: var(--text);
+    font-family: monospace;
+    background: linear-gradient(rgb(40,50,60), rgb(50,60,70));
+    background-repeat: no-repeat;
+}
