@@ -4,7 +4,7 @@
   import Icon from 'svelte-icons-pack/Icon.svelte';
   import AiOutlineSearch from 'svelte-icons-pack/ai/AiOutlineSearch';
 
-  let pokemonData;
+  let pokemonData, pokemonSprite;
 
 </script>
   
@@ -14,6 +14,7 @@
   <form action="?/getPokemon" method="post" use:enhance={() => {
     return async ({result}) => {
       pokemonData = result.data;
+      pokemonSprite = pokemonData['sprites']['other']['official-artwork']['front_default'];
     }
   }}>
     <input type="text" name="pokemonName" placeholder="eg. Charmander" autocomplete="off">
@@ -22,8 +23,8 @@
 
   {#if pokemonData}
   <div id="pokemon-content">
-    <h2>{pokemonData.name}</h2>
-    <img src={pokemonData['sprites']['other']['official-artwork']['front_default']} alt="{pokemonData.name}" />
+    <h2 id="pokemon-name">{pokemonData.name}</h2>
+    <img id="pokemon-sprite" src={pokemonSprite} alt="{pokemonData.name} sprite" />
   </div>
   {/if}
 </main>
@@ -65,13 +66,25 @@
   form > button:hover {
     background-color: rgba(0,0,0,0.2);
   }
-
   #pokemon-content {
-    margin-top: 20px;
-    text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
     min-width: 200px;
+    max-width: 1000px;
+    width: fit-content;
     border: 1px solid gray;
+  }
+
+  #pokemon-name {
+    font-size: 3rem;
+  }
+
+  #pokemon-sprite {
+    min-width: 200px;
+    width: 20vmax;
+    aspect-ratio: 1;
   }
 </style>
