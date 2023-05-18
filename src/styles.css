@@ -1,3 +1,8 @@
+@font-face {
+    font-family: LeagueSpartan;
+    src: url(lib/img/fonts/LeagueSpartan.ttf);
+  }
+  
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +19,7 @@
 body {
     height: 100dvh;
     color: var(--text);
-    font-family: monospace;
+    font-family: LeagueSpartan, monospace, Arial, Helvetica, sans-serif;
     background: linear-gradient(rgb(40,50,60), rgb(50,60,70));
     background-repeat: no-repeat;
 }
