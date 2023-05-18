@@ -11,7 +11,7 @@
 <main>
   <img src={logo} alt="PokéSvelte Logo" width="500">
   <h1>Which Pokémon do you want to look up?</h1>
-  <form method="post" use:enhance={() => {
+  <form action="?/getPokemon" method="post" use:enhance={() => {
     return async ({result}) => {
       pokemonData = result.data;
     }
@@ -42,6 +42,7 @@
     filter: drop-shadow(0 3px 3px black);
     padding: 0 10px;
   }
+  
   form > input {
     background-color: transparent;
     text-align: center;

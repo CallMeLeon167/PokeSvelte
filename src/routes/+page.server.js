@@ -1,6 +1,6 @@
 /** @type {import('./$types').Actions} */
 export const actions = {
-    default: async ({request}) => {
+    getPokemon: async ({request}) => {
         let data = await request.formData();
         let name = data.get('pokemonName').toLowerCase();
 
