@@ -3,10 +3,12 @@
   import logo from '$lib/img/PokeSvelte.png';
   import Icon from 'svelte-icons-pack/Icon.svelte';
   import AiOutlineSearch from 'svelte-icons-pack/ai/AiOutlineSearch';
+  import { fade } from 'svelte/transition';
 
   let pokemonData, pokemonSprite;
   let inputText = "";
   let suggestions = [];
+  $:console.log(pokemonData);
 
   async function autocompletePokemon() {
     const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
@@ -40,9 +42,21 @@
 
 
   {#if pokemonData}
-  <div id="pokemon-content">
+  <div id="pokemon-content" in:fade>
     <h2 id="pokemon-name">{pokemonData.name}</h2>
     <img id="pokemon-sprite" src={pokemonSprite} alt="{pokemonData.name} sprite" />
+    <table class="content-table">
+      <tbody>
+        <tr>
+          <td>Types</td>
+          <td>
+            {#each pokemonData['types'] as pd}
+              {pd.type.name} <br>
+            {/each}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   {/if}
 </main>
@@ -113,7 +127,6 @@
     min-width: 200px;
     max-width: 1000px;
     width: fit-content;
-    border: 1px solid gray;
   }
 
   #pokemon-name {
@@ -126,7 +139,51 @@
 
   #pokemon-sprite {
     min-width: 200px;
-    width: 20vmax;
+    width: 10vmax;
     aspect-ratio: 1;
   }
+
+  .content-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr{
+    color: white;
+    text-align: left;
+    font-weight: bold;
+
+}
+
+.content-table th,
+.content-table td{
+    padding: 12px 15px;
+    transition: all 0.2s;
+    text-shadow: 0 0 3px #101010;;
+}
+
+.content-table tbody tr{
+    border-bottom: 1px solid #262626;
+}
+
+.content-table tbody tr:hover{
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.content-table tbody tr:nth-of-type(even){
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+tr td:first-child {
+  background: var(--primary-hov);
+}
+
+.content-table tbody{
+    border-bottom: 2px solid var(--primary);
+}
 </style>
