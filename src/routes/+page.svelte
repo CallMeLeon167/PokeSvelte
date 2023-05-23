@@ -65,6 +65,7 @@
 <style>
 
   main {
+    padding: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,13 +80,16 @@
     display: flex;
     align-items: center;
     margin-top: 20px;
-    transition: background-color 0.3s ease;
-    transition: transform 0.3s ease;
+    transition: background-color 0.2s ease, transform 0.3s ease;
     transform: translateY(0);
   }
 
   form:hover {
     background-color: #cccbcb;
+  }
+
+  form:focus-within {
+    background-color: white;
     transform: translateY(-3px);
   }
   

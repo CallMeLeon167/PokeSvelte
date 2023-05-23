@@ -18,7 +18,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 2% 5%;
+        padding: 2%;
     }
 
     h1 {
