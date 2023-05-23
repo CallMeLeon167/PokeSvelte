@@ -30,6 +30,7 @@ Clone the repository:
 - [ ] Handle errors for invalid Pokémon names
 - [ ] Display additional information about the Pokémon
 - [ ] Add CSS styling and animations
+- [ ] Making the list items clickable to immediately view the information of the Pokémon
 
 ## 🔍 Sources
 - [PokeApi](https://pokeapi.co/)
