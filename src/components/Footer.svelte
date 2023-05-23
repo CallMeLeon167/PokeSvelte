@@ -2,9 +2,6 @@
 
 <style>
     footer {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        translate: -50%;
+        margin: auto auto 0;
     }
 </style>
