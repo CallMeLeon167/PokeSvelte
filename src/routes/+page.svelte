@@ -18,6 +18,7 @@
     suggestions = pokemonNames.filter(name => name.startsWith(inputText.toLowerCase()));
   }
 
+   autocompletePokemon();
 </script>
   
 <main>
@@ -160,7 +161,6 @@
 
 }
 
-.content-table th,
 .content-table td{
     padding: 12px 15px;
     transition: all 0.2s;
